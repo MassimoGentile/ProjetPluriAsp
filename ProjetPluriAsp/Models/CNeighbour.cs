@@ -7,10 +7,10 @@ namespace ProjetPluriAsp.Models
 {
     public class CNeighbour
     {
-        public string Description { get; private set; }
-        private List<CAppreciation> ListAppreciation = new List<CAppreciation>();
-        private CBasket Basket;
-        public CNeighbour(string passwordInit, string emailInit, string firstNameInit, string lastNameInit, string adressInit, int bankAccountInit)
+        public string Description { get; set; }
+        public virtual List<CAppreciation> ListAppreciation { get; set; }
+        public virtual CBasket Basket { get; set; }
+        /*public CNeighbour(string passwordInit, string emailInit, string firstNameInit, string lastNameInit, string adressInit, int bankAccountInit)
             : base(passwordInit, emailInit, firstNameInit, lastNameInit, adressInit, bankAccountInit)
         {
             Console.WriteLine("Neighbour successfully added !"); //Message temporaire tant que c'est une application console
@@ -35,6 +35,6 @@ namespace ProjetPluriAsp.Models
         public void MakeOrder()
         {
             //Trouver comment implémenter cette fonction
-        }
+        }*/
     }
 }

@@ -7,12 +7,11 @@ namespace ProjetPluriAsp.Models
 {
     public class CTheme
     {
-        private List<string> ListTheme = new List<string> { "Italian", "American", "Chicken", "Fish", "Green Day", "Chinese", "Japanese", "England", "Russian", "Rice" };
-        private List<int> AllreadyChoose = new List<int> { };
-        public string Theme { get; private set; }
-        private Random aleatoire = new Random();
-        private int nbrAlea;
-        public string GetTheme()
+        public int Id { get; set; }
+        public bool AllreadyChoose { get; set; }
+        public bool ChoosenTheme { get; set; }
+        public string Name { get; set; }
+        /*public string GetTheme()
         {
             return Theme;
         }
@@ -44,6 +43,6 @@ namespace ProjetPluriAsp.Models
                 }
             }
             return random;
-        }
+        }*/
     }
 }

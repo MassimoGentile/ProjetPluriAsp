@@ -7,13 +7,13 @@ namespace ProjetPluriAsp.Models
 {
     public class CAppreciation
     {
-        public int Note { get; private set; }
-        public string Commentaries { get; private set; }
-        public COrder Commande { get; private set; }
+        public int Note { get; set; }
+        public string Commentaries { get; set; }
+        public COrder Commande { get; set; }
         //bite
-        private List<List<int>> dishList = new List<List<int>>();
+        public virtual List<List<int>> dishList { get; set; }
 
-        public CAppreciation(int noteInit, string commentariesInit, COrder commandeInit) //Je passe en attribut la commande pour pouvoir identifier la commande
+        /*public CAppreciation(int noteInit, string commentariesInit, COrder commandeInit) //Je passe en attribut la commande pour pouvoir identifier la commande
         {
             Note = noteInit;
             Commentaries = commentariesInit;
@@ -47,12 +47,11 @@ namespace ProjetPluriAsp.Models
                     reference = i[0];
                 }
             }
-            /* 
-             ATTENTION IL FAUT REUSSIR A RELIER LA REFERENCE DU PLAT AU PLAT QUI LUI CORRESPOND 
-             SI ON PASSE PAR UNE BASE DE DONNEE, TERMINER CETTE METHODE EST SIMPLE CAR IL SUFFIT D'ALLER RECHERCHER L'ID DU PLAT EN QUESTION ET ON RETOMBE SUR LE PLAT DIRECTEMENT
+            
+             //ATTENTION IL FAUT REUSSIR A RELIER LA REFERENCE DU PLAT AU PLAT QUI LUI CORRESPOND 
+             //SI ON PASSE PAR UNE BASE DE DONNEE, TERMINER CETTE METHODE EST SIMPLE CAR IL SUFFIT D'ALLER RECHERCHER L'ID DU PLAT EN QUESTION ET ON RETOMBE SUR LE PLAT DIRECTEMENT
              
-             */
             return dish;
-        }
+        }*/
     }
 }

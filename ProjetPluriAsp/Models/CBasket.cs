@@ -7,11 +7,11 @@ namespace ProjetPluriAsp.Models
 {
     public class CBasket
     {
-        public int Number { get; private set; } //ça sert à quoi?
-        public double BasketAmount { get; private set; }
-        public DateTime PaymentDate { get; private set; }
-        private List<COrder> OrderList = new List<COrder>();
-        public CBasket(int numberInit, double basketAmountInit, DateTime paymentDateInit)
+        public int Number { get; set; }
+        public double BasketAmount { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public virtual List<COrder> OrderList { get; set; }
+        /*public CBasket(int numberInit, double basketAmountInit, DateTime paymentDateInit)
         {
             Number = numberInit;
             BasketAmount = basketAmountInit;
@@ -27,6 +27,6 @@ namespace ProjetPluriAsp.Models
             foreach (COrder order in OrderList)
                 price += (order.Dish.DishPrice * order.Amount);
             return price;
-        }
+        }*/
     }
 }

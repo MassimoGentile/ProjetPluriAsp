@@ -7,8 +7,8 @@ namespace ProjetPluriAsp.Models
 {
     public class CCooker : CUser
     {
-        private List<CDish> DishList = new List<CDish>();
-        public CCooker(string passwordInit, string emailInit, string firstNameInit, string lastNameInit, string adressInit, int bankAccountInit)
+        public virtual List<CDish> DishList { get; set; }
+        /*public CCooker(string passwordInit, string emailInit, string firstNameInit, string lastNameInit, string adressInit, int bankAccountInit)
             : base(passwordInit, emailInit, firstNameInit, lastNameInit, adressInit, bankAccountInit)
         {
             Console.WriteLine("Cooker successfully added !");
@@ -25,6 +25,6 @@ namespace ProjetPluriAsp.Models
         {
             CDish alterDish = new CDish(themeInit, nameInit, dishPriceInit, descriptionInit);
             DishList[DishList.FindIndex(x => x.Equals(previousDish))] = alterDish; // A tester!! (Cette commande recherche dans la liste des plat celui qui doit être modifier et puis le remplace par le nouveau)
-        }
+        }*/
     }
 }
