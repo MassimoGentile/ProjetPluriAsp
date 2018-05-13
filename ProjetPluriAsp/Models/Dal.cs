@@ -9,6 +9,7 @@ namespace ProjetPluriAsp.Models
     {
         private BddContext bdd;
         private List<int> ThemeAllreadyChoose = new List<int>();
+        public static int idDish = 0;
         public Dal()
         {
             bdd = new BddContext();
@@ -39,16 +40,29 @@ namespace ProjetPluriAsp.Models
         //////////////////////////////////////////////CCalendar//////////////////////////////////////////////////
 
         //////////////////////////////////////////////CCooker////////////////////////////////////////////////////
-        public void SetCalendar(DateTime day, CDish dish)
+        public void MakeDish(CCooker cooker, string nameInit, double dishPriceInit, string descriptionInit, List<CCalendar> calendarInit, List<CIngredient> ingredientInit)
         {
-            bdd.T_Calendar.Add(new CCalendar { JourDispo = day, Dish = dish });
+            cooker.DishList.Add(new CDish { Id = ++idDish, Theme = GetTheme(), Name = nameInit, DishPrice = dishPriceInit, Description = descriptionInit, Calendar = calendarInit, Ingredient = ingredientInit });
+        }
+        public void DishModification(CCooker cooker, CDish previousDish, string nameInit, double dishPriceInit, string descriptionInit, List<CCalendar> calendarInit, List<CIngredient> ingredientInit)
+        {
+            CDish alterDish = cooker.DishList.SingleOrDefault(d => d.Id == previousDish.Id);
+            alterDish.Name = nameInit;
+            alterDish.DishPrice = dishPriceInit;
+            alterDish.Description = descriptionInit;
+            alterDish.Calendar = calendarInit;
+            alterDish.Ingredient = ingredientInit;
+            cooker.DishList.Remove(previousDish);
+            cooker.DishList.Add(alterDish);
         }
         //////////////////////////////////////////////CDish//////////////////////////////////////////////////////
-        public void AddIngredient(double number, CIngredient item) //Permet de rajouter les ingredients du plat
+        public void AddDishIngredient(CDish dish, CIngredient item) //Permet de rajouter les ingredients du plat
         {
-            CDish dish;
-            Number.Add(number); //Détermine le nombre de fois que l'ingredient est utilisée, par exemple 2 salades,etc...
-            Ingredient.Add(item); //L'ingredient est relier par ça position dans la liste avec le nombre de fois utilisée
+            dish.Ingredient.Add(item);
+        }
+        public void AddAvailableDay(CCalendar day, CDish dish) //Ajout des jours dispo jour par jour
+        {
+            dish.Calendar.Add(day);
         }
         //////////////////////////////////////////////CIngredient////////////////////////////////////////////////
         public void AddIngredient(double priceInit, string nameInit)
@@ -99,6 +113,11 @@ namespace ProjetPluriAsp.Models
             theme = bdd.T_Theme.SingleOrDefault(t => t.Id == nbrAlea);      //J'associe le numéro choisis à la chaine de charactère qui lui correspond
             theme.ChoosenTheme = true;
             theme.AllreadyChoose = true;
+        }
+        public CTheme GetTheme()
+        {
+            CTheme theme = bdd.T_Theme.SingleOrDefault(t => t.ChoosenTheme == true);
+            return theme;
         }
         //////////////////////////////////////////////CUser//////////////////////////////////////////////////////
 
