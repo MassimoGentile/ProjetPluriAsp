@@ -13,14 +13,5 @@ namespace ProjetPluriAsp.Models
         public string LastName { get; set; }
         public string Adress { get; set; }
         public int BankAccount { get; set; }
-        /*protected CUser(string passwordInit, string emailInit, string firstNameInit, string lastNameInit, string adressInit, int bankAccountInit)
-        {
-            Password = passwordInit;
-            Email = emailInit;
-            FirstName = firstNameInit;
-            LastName = lastNameInit;
-            Adress = adressInit;
-            BankAccount = bankAccountInit;
-        }*/
     }
 }

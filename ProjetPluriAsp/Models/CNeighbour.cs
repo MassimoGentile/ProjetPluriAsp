@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetPluriAsp.Models
 {
-    public class CNeighbour
+    public class CNeighbour : CUser
     {
         public string Description { get; set; }
         public virtual List<CAppreciation> ListAppreciation { get; set; }
