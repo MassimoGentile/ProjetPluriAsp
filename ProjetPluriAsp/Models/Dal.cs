@@ -19,20 +19,9 @@ namespace ProjetPluriAsp.Models
             bdd.Dispose();
         }
         //////////////////////////////////////////////CAdmin/////////////////////////////////////////////////////
-        public CAdmin AdminInstance() //Singleton Entity framework
+        public void InscriptionAdmin(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, int bankAccountInit)
         {
-            CAdmin _instance;
-            try
-            {
-                _instance = bdd.T_Admin.SingleOrDefault(a => a.FirstName == "Dik");
-            }
-            catch(Exception)
-            {
-                _instance = null;
-            }
-            if (_instance == null)
-                bdd.T_Admin.Add(new CAdmin { FirstName = "Dik", LastName = "Apprio", Password = "BestAdminPassword", Email = "DikApprio@gmail.com", Adress = "Avenue des beaux Art 19 6042 Charleroi", BankAccount = 04545654, admin = true });
-            return _instance;
+            bdd.T_Admin.Add(new CAdmin { FirstName = firstNameInit, LastName = lastNameInit, Password = passwordInit, Email = emailInit, Adress = adressInit, BankAccount = bankAccountInit, admin = true });
         }
         //////////////////////////////////////////////CAppreciation//////////////////////////////////////////////
         public CDish AverageAppreciation() //Fonction qui retourne le plat qui à la meilleur moyenne
