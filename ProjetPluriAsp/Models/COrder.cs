@@ -10,9 +10,13 @@ namespace ProjetPluriAsp.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public DateTime Date { get; set; }
+        [Required]
         public string State { get; set; }
+        [Required]
         public int Amount { get; set; }
+        [Required]
         public virtual CDish Dish { get; set; }
     }
 }

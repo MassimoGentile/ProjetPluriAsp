@@ -10,6 +10,7 @@ namespace ProjetPluriAsp.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public int Note { get; set; }
         public string Commentaries { get; set; }
         public virtual COrder Commande { get; set; }

@@ -12,6 +12,7 @@ namespace ProjetPluriAsp.Models
         public int Id { get; set; }
         public bool AllreadyChoose { get; set; }
         public bool ChoosenTheme { get; set; }
+        [Required]
         public string Name { get; set; }
     }
 }
