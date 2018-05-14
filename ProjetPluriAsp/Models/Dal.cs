@@ -19,7 +19,7 @@ namespace ProjetPluriAsp.Models
             bdd.Dispose();
         }
         //////////////////////////////////////////////CAdmin/////////////////////////////////////////////////////
-        public CAdmin AdminInstance() //Tentative infructueuse de singleton en entity framework
+        public CAdmin AdminInstance() //Singleton Entity framework
         {
             CAdmin _instance;
             try
