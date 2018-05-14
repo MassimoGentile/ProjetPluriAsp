@@ -19,7 +19,7 @@ namespace ProjetPluriAsp.Models
             bdd.Dispose();
         }
         //////////////////////////////////////////////CAdmin/////////////////////////////////////////////////////
-        /*public void AdminInstance() //Tentative infructueuse de singleton en entity framework
+        public CAdmin AdminInstance() //Tentative infructueuse de singleton en entity framework
         {
             CAdmin _instance;
             try
@@ -32,7 +32,8 @@ namespace ProjetPluriAsp.Models
             }
             if (_instance == null)
                 bdd.T_Admin.Add(new CAdmin { FirstName = "Dik", LastName = "Apprio", Password = "BestAdminPassword", Email = "DikApprio@gmail.com", Adress = "Avenue des beaux Art 19 6042 Charleroi", BankAccount = 04545654, admin = true });
-        }*/
+            return _instance;
+        }
         //////////////////////////////////////////////CAppreciation//////////////////////////////////////////////
         public CDish AverageAppreciation() //Fonction qui retourne le plat qui à la meilleur moyenne
         {
