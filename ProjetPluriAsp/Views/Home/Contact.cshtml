@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title</title>
+    <link rel="stylesheet" href="~/Content/Contact.css" />
+</head>
+<body>
+    <div>
+        <form method="post" action="">
+            <fieldset>
+                <legend>Contactez-nous</legend>
+                <fieldset>
+                    <p>
+                        <label>Nom*</label>
+                        <input type="text"
+                               name="nom"
+                               maxlength="25"
+                               size=""
+                               autofocus="autofocus"
+                               placeholder="Votre nom"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Prénom*</label>
+                        <input type="text"
+                               name="prenom"
+                               maxlength="25"
+                               size=""
+                               autofocus="autofocus"
+                               placeholder="Votre prénom"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Adresse mail*</label>
+                        <input type="text"
+                               name="mail"
+                               maxlength="25"
+                               size=""
+                               autofocus="autofocus"
+                               placeholder="Votre adresse mail"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Votre message</label>
+                        <textarea name="commentaire"
+                                  placeholder="Votre commentaire"
+                                  rows="8"
+                                  cols="50"></textarea>
+                    </p>
+                    <p>
+                        <label>Vérification*</label>
+                        <input name="human"
+                               placeholder="Combien vaut 8+4 ?" />
+                    </p>
+                    <p>Les champs possédant une * sont obligatoires.</p>
+                </fieldset>
+                <fieldset>
+                    <p>
+                        <input type="submit"
+                               name="submit"
+                               value="Envoyer les données" />
+                        <input type="reset"
+                               value="Restaurer le formulaire" />
+                    </p>
+                </fieldset>
+            </fieldset>
+        </form>
+        <h3>Nos réseaux sociaux</h3>
+        <div class="reseaux">
+            <p>
+                <a href="https://www.facebook.com"><img src="" alt="facebook" width="300" /></a>
+                <a href="https://www.instagram.com"><img src="" alt="instagram" width="300" /></a>
+                <a href="https://twitter.com"><img src="" alt="twitter" width="300" /></a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

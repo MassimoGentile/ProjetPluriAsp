@@ -1,0 +1,78 @@
+﻿body {
+    text-align: center;
+    color: white;
+    font-family: "calibri light";
+}
+
+#page {
+    width: 850px;
+    margin: auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+form {
+    width: 700px;
+    margin: auto;
+}
+
+legend {
+    width: 150px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+fieldset {
+    border-color: black;
+}
+
+form > fieldset:first-of-type {
+    background-color: #27282b;
+}
+
+fieldset {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+    fieldset p {
+        display: table-row;
+    }
+
+form > fieldset:first-child input,
+form > fieldset:first-child label,
+form > fieldset:first-child textarea,
+form > fieldset:first-child select {
+    display: table-cell;
+}
+
+label {
+    width: 120px;
+    padding-left: 110px;
+    text-align: right;
+    font-weight: bolder;
+}
+
+fieldset + fieldset {
+    margin-top: 10px;
+    padding: 0;
+}
+
+fieldset + fieldset p {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+butt p input {
+    display: inline-block;
+    width: 25%;
+    height: 50px;
+}

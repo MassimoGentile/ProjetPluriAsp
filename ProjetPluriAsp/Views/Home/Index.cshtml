@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title</title>
+    <link rel="stylesheet" href="~/Content/Index.css" />
+</head>
+<body>
+    <div class="page">
+        <form method="" action="">
+            <fieldset>
+                <h3>Bienvenu</h3>
+                <fieldset>
+                    <p>
+                        <label>Adresse mail</label>
+                        <input type="text"
+                               name="email"
+                               maxlength="20"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="Adresse mail"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Mot de passe</label>
+                        <input type="password"
+                               name="pwd"
+                               placeholder="Max. 15 caractères"
+                               maxlength="15" />
+                    </p>
+                </fieldset>
+                <fieldset class="butt">
+                    <p>
+                        <input type="submit"
+                               value="Se connecter" />
+                        <input type="reset"
+                               value="Effacer" />
+                    </p>
+                </fieldset>
+                <a href="https://www.google.be">Mot de passe oublié ?</a>
+                <a href="/Home/Inscription">S'inscrire</a>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

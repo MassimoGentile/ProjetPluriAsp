@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title</title>
+    <link rel="stylesheet" href="~/Content/Inscription.css" />
+</head>
+<body>
+    <div class="page">
+        <h3>Inscription</h3>
+        <form method="" action="">
+            <fieldset>
+                <h3>Sign up</h3>
+                <fieldset>
+                    <p>
+                        <label>Nom</label>
+                        <input type="text"
+                               name="nom"
+                               maxlength="45"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="Nom de famille"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Prénom</label>
+                        <input type="text"
+                               name="prenom"
+                               maxlength="25"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="Prénom"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Rue</label>
+                        <input type="text"
+                               name="rue"
+                               maxlength="45"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="Rue"
+                               value="" />
+                    <p>
+                        <label>Numéro</label>
+                        <input type="text"
+                               name="numero"
+                               maxlength="10"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="N°"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Localité</label>
+                        <input type="text"
+                               name="localite"
+                               maxlength="35"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="Localité"
+                               value="" />
+                    </p>
+                    <p>
+                        <label>Mot de passe</label>
+                        <input type="password"
+                               name="pwd"
+                               placeholder="Max. 15 caractères"
+                               maxlength="15" />
+                    </p>
+                    <p>
+                        <label>Compte Bancaire</label>
+                        <input type="text"
+                               name="cb"
+                               placeholder="BE"
+                               maxlength="16" />
+                    </p>
+                    <p>
+                        <label>Utilisateur</label>
+                        Cuisinier
+                        <input type="radio"
+                               name="user"
+                               value="cooker" />
+                        Voisin
+                        <input type="radio"
+                               name="user"
+                               value="neighbour" />
+                    </p>
+                </fieldset>
+                <fieldset class="butt">
+                    <p>
+                        <input type="submit"
+                               value="S'inscrire" />
+                        <input type="reset"
+                               value="Effacer" />
+                    </p>
+                </fieldset>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
