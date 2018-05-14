@@ -34,7 +34,40 @@ namespace ProjetPluriAsp.Models
                 bdd.T_Admin.Add(new CAdmin { FirstName = "Dik", LastName = "Apprio", Password = "BestAdminPassword", Email = "DikApprio@gmail.com", Adress = "Avenue des beaux Art 19 6042 Charleroi", BankAccount = 04545654, admin = true });
         }*/
         //////////////////////////////////////////////CAppreciation//////////////////////////////////////////////
+        public CDish AverageAppreciation() //Fonction qui retourne le plat qui à la meilleur moyenne
+        {
+            List<List<int>> dishList = new List<List<int>>();
+            List<CAppreciation> listApp = bdd.T_Appreciation.ToList();
+            foreach (CAppreciation app in listApp)
+            {
+                foreach (List<int> i in dishList)
+                {
+                    if (i[0] == app.Commande.Dish.Id)//Je regarde si la référence du plat est déjà connue
+                    {
+                        i[1] += app.Note;
+                        i[2]++;
+                    }
+                    else //Si elle ne l'est pas je la rajoute dans la liste
+                    {
+                        dishList.Add(new List<int> { app.Commande.Dish.Id, app.Note, 1 });
+                    }
 
+                }
+            }
+            float average = 0;
+            int reference = 0;
+            foreach (List<int> i in dishList)
+            {
+                float temp = (float)i[1] / i[2];
+                if (average < temp) //Je récupère la moyenne et la référence du plat qui à la meilleur moyenne
+                {
+                    average = temp;
+                    reference = i[0];
+                }
+            }
+            CDish BestDish = bdd.T_Dish.SingleOrDefault(d => d.Id == reference);
+            return BestDish;
+        }
         //////////////////////////////////////////////CBasket////////////////////////////////////////////////////
         public void AddOrder(CNeighbour neighbour, int numberWhanted, CDish dish)
         {
@@ -47,8 +80,6 @@ namespace ProjetPluriAsp.Models
                 price += (order.Dish.DishPrice * order.Amount);
             neighbour.Basket.BasketAmount = price;
         }
-        //////////////////////////////////////////////CCalendar//////////////////////////////////////////////////
-
         //////////////////////////////////////////////CCooker////////////////////////////////////////////////////
         public void InscriptionCooker(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, int bankAccountInit)
         {
@@ -100,8 +131,6 @@ namespace ProjetPluriAsp.Models
         {
             neighbour.ListAppreciation.Add(new CAppreciation { Note = note, Commentaries = comment, Commande = command });
         }
-        //////////////////////////////////////////////COrder/////////////////////////////////////////////////////
-
         //////////////////////////////////////////////CThème/////////////////////////////////////////////////////
         private int RandomPaschoisis()  //Méthode de génération d'un nombre random pour les thèmes
         {
