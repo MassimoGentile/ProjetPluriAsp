@@ -36,10 +36,24 @@ namespace ProjetPluriAsp.Models
         //////////////////////////////////////////////CAppreciation//////////////////////////////////////////////
 
         //////////////////////////////////////////////CBasket////////////////////////////////////////////////////
-
+        public void AddOrder(CNeighbour neighbour, int numberWhanted, CDish dish)
+        {
+            neighbour.Basket.OrderList.Add(new COrder { Date = DateTime.Now, State = "En Attente", Dish = dish, Amount = numberWhanted });
+        }
+        public void CalculAmount(CNeighbour neighbour)
+        {
+            double price = 0;
+            foreach (COrder order in neighbour.Basket.OrderList)
+                price += (order.Dish.DishPrice * order.Amount);
+            neighbour.Basket.BasketAmount = price;
+        }
         //////////////////////////////////////////////CCalendar//////////////////////////////////////////////////
 
         //////////////////////////////////////////////CCooker////////////////////////////////////////////////////
+        public void InscriptionCooker(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, int bankAccountInit)
+        {
+            bdd.T_Cooker.Add(new CCooker { FirstName = firstNameInit, LastName = lastNameInit, Password = passwordInit, Email = emailInit, Adress = adressInit, BankAccount = bankAccountInit });
+        }
         public void MakeDish(CCooker cooker, string nameInit, double dishPriceInit, string descriptionInit, List<CCalendar> calendarInit, List<CIngredient> ingredientInit)
         {
             cooker.DishList.Add(new CDish { Id = ++idDish, Theme = GetTheme(), Name = nameInit, DishPrice = dishPriceInit, Description = descriptionInit, Calendar = calendarInit, Ingredient = ingredientInit });
@@ -70,7 +84,22 @@ namespace ProjetPluriAsp.Models
             bdd.T_Ingredient.Add(new CIngredient { Name = nameInit, Price = priceInit });
         }
         //////////////////////////////////////////////CNeighbour/////////////////////////////////////////////////
-
+        public void InscriptionNeighbour(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, int bankAccountInit, string descriptionInit)
+        {
+            bdd.T_Neighbour.Add(new CNeighbour { FirstName = firstNameInit, LastName = lastNameInit, Password = passwordInit, Email = emailInit, Adress = adressInit, BankAccount = bankAccountInit, Description = descriptionInit, Basket = null, ListAppreciation = null });
+        }
+        public void DescriptionModification(CNeighbour neighbour, string description)
+        {
+            neighbour.Description = description;
+        }
+        public void MakeOrder(CNeighbour neighbour)
+        {
+            neighbour.Basket.PaymentDate = DateTime.Now; //Evidement le systeme de payement doit être ici
+        }
+        public void LeaveAppreciation(CNeighbour neighbour, int note, string comment, COrder command)
+        {
+            neighbour.ListAppreciation.Add(new CAppreciation { Note = note, Commentaries = comment, Commande = command });
+        }
         //////////////////////////////////////////////COrder/////////////////////////////////////////////////////
 
         //////////////////////////////////////////////CThème/////////////////////////////////////////////////////
@@ -119,7 +148,5 @@ namespace ProjetPluriAsp.Models
             CTheme theme = bdd.T_Theme.SingleOrDefault(t => t.ChoosenTheme == true);
             return theme;
         }
-        //////////////////////////////////////////////CUser//////////////////////////////////////////////////////
-
     }
 }

@@ -9,9 +9,8 @@ namespace ProjetPluriAsp.Models
     {
         public int Note { get; set; }
         public string Commentaries { get; set; }
-        public COrder Commande { get; set; }
-        //bite
-        public virtual List<List<int>> dishList { get; set; }
+        public virtual COrder Commande { get; set; }
+        //public virtual List<List<int>> dishList { get; set; }
 
         /*public CAppreciation(int noteInit, string commentariesInit, COrder commandeInit) //Je passe en attribut la commande pour pouvoir identifier la commande
         {
