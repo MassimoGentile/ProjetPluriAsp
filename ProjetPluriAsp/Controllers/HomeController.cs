@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjetPluriAsp.Models;
 
 namespace ProjetPluriAsp.Controllers
 {
@@ -29,6 +30,8 @@ namespace ProjetPluriAsp.Controllers
 
         public ActionResult Dishes()
         {
+            Dal dal = new Dal();
+            ViewBag.ListDish = dal.ObtainDish();
             ViewBag.title = "Plats";
             return View();
         }

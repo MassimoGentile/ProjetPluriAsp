@@ -1,4 +1,4 @@
-﻿
+﻿@using ProjetPluriAsp.Models;
 <!DOCTYPE html>
 
 <html>
@@ -44,26 +44,16 @@
         </form>
     </div>
     <div class="plats">
+        @foreach (CDish d in ViewBag.ListDish)
+        {
         <div class="case">
             <img src="" width="" />
-            <p>Sed mollis sapien nec posuere sollicitudin. Ut urna risus, pulvinar consequat laoreet ac, tempor sed ex. Nunc accumsan neque eu orci hendrerit, id efficitur ante condimentum. Sed sodales eu nunc et vulputate. Phasellus posuere, massa tempor posuere hendrerit, mauris dui condimentum lectus, in gravida massa enim at purus. Nullam vel justo urna. In molestie posuere nisl, iaculis venenatis urna pellentesque at. Nullam convallis, nisi sed porta vehicula, augue massa tempor lacus, eu varius leo diam eget mi. Vestibulum ut diam ut justo euismod eleifend vitae aliquet libero. Nunc congue lorem et dignissim mollis.</p>
-            <p class="prix"></p>
+            <p>@d.Name</p>
+            <p>@d.Description</p>
+            <p class="prix">@d.DishPrice</p>
             <a href=""><img src="" alt="Commander" width="" /></a>
         </div>
-
-        <div class="case">
-            <img src="" width="" />
-            <p>Sed mollis sapien nec posuere sollicitudin. Ut urna risus, pulvinar consequat laoreet ac, tempor sed ex. Nunc accumsan neque eu orci hendrerit, id efficitur ante condimentum. Sed sodales eu nunc et vulputate. Phasellus posuere, massa tempor posuere hendrerit, mauris dui condimentum lectus, in gravida massa enim at purus. Nullam vel justo urna. In molestie posuere nisl, iaculis venenatis urna pellentesque at. Nullam convallis, nisi sed porta vehicula, augue massa tempor lacus, eu varius leo diam eget mi. Vestibulum ut diam ut justo euismod eleifend vitae aliquet libero. Nunc congue lorem et dignissim mollis.</p>
-            <p class="prix"></p>
-            <a href=""><img src="" alt="Commander" width="" /></a>
-        </div>
-
-        <div class="case">
-            <img src="" width="" />
-            <p>Sed mollis sapien nec posuere sollicitudin. Ut urna risus, pulvinar consequat laoreet ac, tempor sed ex. Nunc accumsan neque eu orci hendrerit, id efficitur ante condimentum. Sed sodales eu nunc et vulputate. Phasellus posuere, massa tempor posuere hendrerit, mauris dui condimentum lectus, in gravida massa enim at purus. Nullam vel justo urna. In molestie posuere nisl, iaculis venenatis urna pellentesque at. Nullam convallis, nisi sed porta vehicula, augue massa tempor lacus, eu varius leo diam eget mi. Vestibulum ut diam ut justo euismod eleifend vitae aliquet libero. Nunc congue lorem et dignissim mollis.</p>
-            <p class="prix"></p>
-            <a href=""><img src="" alt="Commander" width="" /></a>
-        </div>
+        }
     </div>
 </body>
 </html>

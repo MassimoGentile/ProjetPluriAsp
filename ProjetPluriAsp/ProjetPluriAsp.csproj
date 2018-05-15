@@ -134,8 +134,8 @@
     <Content Include="Views\Home\Dishes.cshtml" />
     <Content Include="Views\Home\Inscription.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\_Viewstart.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

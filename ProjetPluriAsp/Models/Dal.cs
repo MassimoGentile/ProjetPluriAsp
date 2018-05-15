@@ -99,6 +99,10 @@ namespace ProjetPluriAsp.Models
         {
             dish.Calendar.Add(day);
         }
+        public List<CDish> ObtainDish()
+        {
+            return bdd.T_Dish.ToList();
+        }
         //////////////////////////////////////////////CIngredient////////////////////////////////////////////////
         public void AddIngredient(double priceInit, string nameInit)
         {

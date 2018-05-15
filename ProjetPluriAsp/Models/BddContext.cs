@@ -54,6 +54,8 @@ namespace ProjetPluriAsp.Models
             bdd.T_Cooker.Add(new CCooker { FirstName = "Paul", LastName = "Ice", Password = "PaulPwd", Email = "PaulIce@gmail.com", Adress = "Avenue de la loi 42 6042 Charleroi", BankAccount = 434652450 });
             bdd.T_Neighbour.Add(new CNeighbour { FirstName = "Alain", LastName = "Provist", Password = "AlainPwd", Email = "AlainProvist@gmail.com", Adress = "Rue des potiers 24 6040 Jumet", BankAccount = 1456435465, Description = "J'arrive souvent sans prévenir" });
             bdd.T_Neighbour.Add(new CNeighbour { FirstName = "Djamal", LastName = "Dormi", Password = "DjamalPwd", Email = "DjamalDormi@gmail.com", Adress = "Rue des truants 1 6042 Charleroi", BankAccount = 123456452, Description = "Je suis Arabe mais je paye mes plats" });
+            bdd.T_Dish.Add(new CDish { Name = "Bedo sur son coulis de verdure", DishPrice = 12.45, Description="C'est trop bon le bedo"});
+            bdd.T_Dish.Add(new CDish { Name = "Steak frite moutarde juif", DishPrice = 24.63, Description="Attention à la moutarde elle tue dans certain cas"});
         }
     }
 }
