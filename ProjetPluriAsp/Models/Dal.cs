@@ -101,6 +101,9 @@ namespace ProjetPluriAsp.Models
         }
         public List<CDish> ObtainDish()
         {
+            if (bdd.T_Dish.ToList() is null)
+                return null;
+            else
             return bdd.T_Dish.ToList();
         }
         //////////////////////////////////////////////CIngredient////////////////////////////////////////////////
