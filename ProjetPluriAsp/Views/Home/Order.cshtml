@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Commande</title>
+    <link rel="stylesheet" href="~/Content/Order.css">
+</head>
+<body>
+    <div>
+        <form>
+            <img src="test.png" height="100px">
+            <p>
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar dictum justo, id tincidunt lorem varius facilisis. Donec dictum dictum sem id egestas. Aliquam rhoncus elementum nulla, sed facilisis ligula consequat nec. Nullam erat massa, luctus et metus at, rutrum sagittis quam. Proin facilisis nunc eu purus posuere placerat. Etiam tempor purus turpis, id suscipit augue finibus vel. Praesent commodo dignissim lectus quis mattis. Aliquam sit amet ipsum mi. Phasellus scelerisque velit commodo quam cursus fermentum.
+            </p>
+            <label>Quantité :</label>
+            <select name="amount">
+                <option value="0"></option>
+                <option value="1">
+                    1
+                </option>
+                <option value="2">
+                    2
+                </option>
+                <option value="3">
+                    3
+                </option>
+                <option value="4">
+                    4
+                </option>
+                <option value="5">
+                    5
+                </option>
+                <option value="6">
+                    6
+                </option>
+                <option value="7">
+                    7
+                </option>
+                <option value="8">
+                    8
+                </option>
+                <option value="9">
+                    9
+                </option>
+                <option value="10">
+                    10
+                </option>
+            </select>
+            <input type="submit"
+                   value="Commander" />
+        </form>
+    </div>
+    <form class="fcom">
+        <p>
+            <label>Note :</label>
+            <div class="slidecontainer">
+                <input type="range"
+                       min="0"
+                       max="10"
+                       value="5"
+                       class="slider"
+                       id="myRange" />
+            </div>
+            <textarea name="commentaire"
+                      placeholder="Ecrire un commentaire"
+                      rows="5"
+                      cols="120"></textarea>
+            <input type="submit"
+                   value="Ajouter" />
+        </p>
+    </form>
+</body>
+</html>

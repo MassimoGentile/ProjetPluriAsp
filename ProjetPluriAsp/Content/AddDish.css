@@ -1,0 +1,43 @@
+﻿body {
+    background-color: #424242;
+    height: auto;
+    width: 1500px;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-top: -17px;
+    padding-top: 100px;
+    font-family: "calibri light";
+    color: white;
+}
+
+div {
+    border: 1px solid white;
+    padding-left: 50px;
+}
+
+form {
+    display: table;
+}
+
+p {
+    display: table-row;
+}
+
+label {
+    display: table-cell;
+    padding-right: 20px;
+    padding-top: 30px;
+}
+
+input {
+    display: table-cell;
+}
+
+label + textarea {
+    float: right;
+    position: relative;
+}
+
+label:last-child {
+    padding-top: -30px;
+}

@@ -83,5 +83,25 @@ namespace ProjetPluriAsp.Controllers
             }
             return RedirectToAction("Inscription");
         }
+
+        public ActionResult AddDish()
+        {
+            return View();
+        }
+
+        public ActionResult DishesCooker()
+        {
+            return View();
+        }
+
+        public ActionResult DishesNeighbour()
+        {
+            return View();
+        }
+
+        public ActionResult Order()
+        {
+            return View();
+        }
     }
 }

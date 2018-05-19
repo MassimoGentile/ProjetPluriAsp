@@ -1,0 +1,59 @@
+﻿@{ 
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Ajouter un plat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/Content/AddDish.css">
+</head>
+<body>
+    <h2>Ajouter un plat</h2>
+    <div>
+        <form>
+            <p>
+                <label>Nom du plat : </label>
+                <input type="text"
+                       name="nom"
+                       maxlength="50"
+                       size="20"
+                       autofocus="autofocus"
+                       placeholder="Nom du plat" />
+            </p>
+            <p>
+                <label>Ingrédients : </label>
+                <select name="ingredient" multiple="multiple" size="5">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </p>
+            <p>
+                <label>Ajouter les ingrédients :</label>
+                <input type="text"
+                       name="nouvIngredient"
+                       maxlength="50"
+                       size="20"
+                       autofocus="autofocus"
+                       placeholder="Ingrédient" />
+            </p>
+            <p>
+                <label>Description : </label>
+                <textarea name="description"
+                          placeholder="Description du plat"
+                          rows="2"
+                          cols="50"></textarea>
+            </p>
+            <br>
+            <p>
+                <input type="submit"
+                       value="Ajouter" />
+                <input type="reset"
+                       value="Effacer" />
+            </p>
+        </form>
+    </div>
+</body>
+</html>

@@ -150,12 +150,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AddDish.css" />
     <Content Include="Content\Contact.css" />
     <Content Include="Content\Dishes.css" />
+    <Content Include="Content\DishesCooker.css" />
+    <Content Include="Content\DishesNeighbour.css" />
     <Content Include="Content\Header.css" />
     <Content Include="Content\HomePage.css" />
     <Content Include="Content\Index.css" />
     <Content Include="Content\Inscription.css" />
+    <Content Include="Content\Order.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -191,6 +195,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_Viewstart.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Home\AddDish.cshtml" />
+    <Content Include="Views\Home\Order.cshtml" />
+    <Content Include="Views\Home\DishesCooker.cshtml" />
+    <Content Include="Views\Home\DishesNeighbour.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

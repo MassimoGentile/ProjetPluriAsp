@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title</title>
+    <link rel="stylesheet" href="~/Content/DishesNeighbour.css" />
+</head>
+<body>
+    <div class="filtre">
+        <form method="post" action="">
+            <p>
+                <label>Thème </label>
+                <select name="theme">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+
+                <label>Cuisinier </label>
+                <select name="cooker">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+
+                <label>Prix </label>
+                <select name="price">
+                    <option value="none"> </option>
+                    <option value="low">5-10</option>
+                    <option value="mid">10-15</option>
+                    <option value="high">15-20</option>
+                    <option value="vhigh">20-25</option>
+                </select>
+
+                <input type="submit"
+                       value="Filtrer" />
+                <input type="reset"
+                       value="Effacer" />
+            </p>
+        </form>
+    </div>
+    <div class="plats">
+        @foreach (CDish d in ViewBag.ListDish)
+        {
+            <div class="case">
+                <img src="" width="" />
+                <p>@d.Name</p>
+                <p>@d.Description</p>
+                <p class="prix">@d.DishPrice</p>
+                <form>
+                    <input type="submit"
+                           value="Commander" />
+                </form>
+            </div>
+        }
+    </div>
+</body>
+</html>
