@@ -16,7 +16,6 @@ namespace ProjetPluriAsp.Controllers
             return View();
         }
 
-
         public ActionResult HomePage()
         {
             ViewBag.title = "Accueil";
@@ -36,13 +35,27 @@ namespace ProjetPluriAsp.Controllers
             ViewBag.title = "Contact";
             return View();
         }
+
         [HttpPost]
         public ActionResult Identification(string email, string pwd)
         {
             Dal d = new Dal();
+            CUser u = new CCooker();
+            CUser u2 = new CNeighbour();
+
             if (d.Identification(email, pwd))
             {
-                return View("HomePage");
+                if(email == u.Email && pwd == u.Password)
+                {
+                    return View("DishesCooker");
+                }
+                else
+                {
+                    if(email == u2.Email && pwd == u2.Password)
+                    {
+                        return View("DishesNeighbour");
+                    }
+                }
             }
 
             ViewBag.erreur = "Erreur. Mot de passe et/ou E-mail incorrect";
