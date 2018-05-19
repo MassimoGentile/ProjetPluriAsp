@@ -21,6 +21,6 @@ namespace ProjetPluriAsp.Models
         [Required]
         public string Adress { get; set; }
         [Required]
-        public int BankAccount { get; set; }
+        public long BankAccount { get; set; }
     }
 }

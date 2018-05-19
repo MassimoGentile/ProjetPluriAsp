@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="page">
-        <form method="" action="">
+        <form method="post" action="/Home/Identification">
             <fieldset>
                 <h3>Bienvenu</h3>
                 <fieldset>
@@ -21,7 +21,7 @@
                         <label>Adresse mail</label>
                         <input type="text"
                                name="email"
-                               maxlength="20"
+                               maxlength="50"
                                size="20"
                                autofocus="autofocus"
                                placeholder="Adresse mail"
@@ -45,6 +45,7 @@
                 </fieldset>
                 <a href="https://www.google.be">Mot de passe oublié ?</a>
                 <a href="/Home/Inscription">S'inscrire</a>
+                <p style="background-color: red; text-align: center;">@ViewBag.erreur</p>
             </fieldset>
         </form>
     </div>

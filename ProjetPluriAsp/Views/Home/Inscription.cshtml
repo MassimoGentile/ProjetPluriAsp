@@ -15,14 +15,14 @@
 <body>
     <div class="page">
         <h3>Inscription</h3>
-        <form method="" action="">
+        <form method="post" action="/Home/AjouterUser">
             <fieldset>
                 <h3>Sign up</h3>
                 <fieldset>
                     <p>
                         <label>Nom</label>
                         <input type="text"
-                               name="nom"
+                               name="firstN"
                                maxlength="45"
                                size="20"
                                autofocus="autofocus"
@@ -32,7 +32,7 @@
                     <p>
                         <label>Prénom</label>
                         <input type="text"
-                               name="prenom"
+                               name="name"
                                maxlength="25"
                                size="20"
                                autofocus="autofocus"
@@ -40,9 +40,18 @@
                                value="" />
                     </p>
                     <p>
+                        <label>E-Mail</label>
+                        <input type="text"
+                               name="email"
+                               maxlength="50"
+                               size="20"
+                               autofocus="autofocus"
+                               placeholder="E-mail" />
+                    </p>
+                    <p>
                         <label>Rue</label>
                         <input type="text"
-                               name="rue"
+                               name="adress"
                                maxlength="45"
                                size="20"
                                autofocus="autofocus"
@@ -51,7 +60,7 @@
                     <p>
                         <label>Numéro</label>
                         <input type="text"
-                               name="numero"
+                               name="adress"
                                maxlength="10"
                                size="20"
                                autofocus="autofocus"
@@ -61,7 +70,7 @@
                     <p>
                         <label>Localité</label>
                         <input type="text"
-                               name="localite"
+                               name="adress"
                                maxlength="35"
                                size="20"
                                autofocus="autofocus"
@@ -71,14 +80,14 @@
                     <p>
                         <label>Mot de passe</label>
                         <input type="password"
-                               name="pwd"
+                               name="password"
                                placeholder="Max. 15 caractères"
                                maxlength="15" />
                     </p>
                     <p>
                         <label>Compte Bancaire</label>
                         <input type="text"
-                               name="cb"
+                               name="bankAccount"
                                placeholder="BE"
                                maxlength="16" />
                     </p>

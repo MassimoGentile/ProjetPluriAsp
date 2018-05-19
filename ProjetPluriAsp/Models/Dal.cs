@@ -71,9 +71,10 @@ namespace ProjetPluriAsp.Models
             neighbour.Basket.BasketAmount = price;
         }
         //////////////////////////////////////////////CCooker////////////////////////////////////////////////////
-        public void InscriptionCooker(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, int bankAccountInit)
+        public void InscriptionCooker(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, long bankAccountInit)
         {
             bdd.T_Cooker.Add(new CCooker { FirstName = firstNameInit, LastName = lastNameInit, Password = passwordInit, Email = emailInit, Adress = adressInit, BankAccount = bankAccountInit });
+            bdd.SaveChanges();
         }
         public void MakeDish(CCooker cooker, string nameInit, double dishPriceInit, string descriptionInit, List<CCalendar> calendarInit, List<CIngredient> ingredientInit)
         {
@@ -89,6 +90,7 @@ namespace ProjetPluriAsp.Models
             alterDish.Ingredient = ingredientInit;
             cooker.DishList.Remove(previousDish);
             cooker.DishList.Add(alterDish);
+            bdd.SaveChanges();
         }
         //////////////////////////////////////////////CDish//////////////////////////////////////////////////////
         public void AddDishIngredient(CDish dish, CIngredient item) //Permet de rajouter les ingredients du plat
@@ -106,15 +108,17 @@ namespace ProjetPluriAsp.Models
             else
             return bdd.T_Dish.ToList();
         }
+       
         //////////////////////////////////////////////CIngredient////////////////////////////////////////////////
         public void AddIngredient(double priceInit, string nameInit)
         {
             bdd.T_Ingredient.Add(new CIngredient { Name = nameInit, Price = priceInit });
         }
         //////////////////////////////////////////////CNeighbour/////////////////////////////////////////////////
-        public void InscriptionNeighbour(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, int bankAccountInit, string descriptionInit)
+        public void InscriptionNeighbour(string firstNameInit, string lastNameInit, string passwordInit, string emailInit, string adressInit, long bankAccountInit, string descriptionInit)
         {
             bdd.T_Neighbour.Add(new CNeighbour { FirstName = firstNameInit, LastName = lastNameInit, Password = passwordInit, Email = emailInit, Adress = adressInit, BankAccount = bankAccountInit, Description = descriptionInit, Basket = null, ListAppreciation = null });
+            bdd.SaveChanges();
         }
         public void DescriptionModification(CNeighbour neighbour, string description)
         {
@@ -173,6 +177,44 @@ namespace ProjetPluriAsp.Models
         {
             CTheme theme = bdd.T_Theme.SingleOrDefault(t => t.ChoosenTheme == true);
             return theme;
+        }
+        public CCooker[] GetCooker()
+        {
+            return bdd.T_Cooker.ToArray();
+        }
+
+        public CNeighbour[] GetNeighbour()
+        {
+            return bdd.T_Neighbour.ToArray();
+        }
+
+        public bool Identification(string email, string pwd)
+        {
+            bool test = false;
+            List<CUser> liste = bdd.T_User.ToList();
+            string pwdInputed = pwd;
+
+            foreach (CUser u in liste)
+            {
+                if (u.Email == email && u.Password == pwdInputed)
+                {
+                    test = true;
+                }
+            }
+            return test;
+        }
+        public int SessionUser(string email, string pwd)
+        {
+            List<CUser> liste = bdd.T_User.ToList();
+            int userID = 0;
+            foreach (CUser u in liste)
+            {
+                if (u.Email == email && u.Password == pwd)
+                {
+                    userID = u.Id;
+                }
+            }
+            return userID;
         }
     }
 }
